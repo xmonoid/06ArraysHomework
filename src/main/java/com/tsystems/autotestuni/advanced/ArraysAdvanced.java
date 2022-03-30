@@ -12,7 +12,17 @@ public class ArraysAdvanced {
      * @return the 3-dim array
      */
     public static double[][][] threeDimensionalArray(int n1, int n2, int n3) {
-        return null;  // FIXME: Implement code here
+        double[][][] result = new double[n1][n2][n3];
+
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j < result[i].length; j++) {
+                for (int k = 0; k < result[i][j].length; k++) {
+                    result[i][j][k] = i * j * k;
+                }
+            }
+        }
+
+        return result;
     }
 
     /**
@@ -28,6 +38,16 @@ public class ArraysAdvanced {
      * @return a merged array
      */
     public static short[] mergeTwoArrays(short[] first, short[] second) {
-        return null;  // FIXME: Implement code here
+        short[] result = new short[first.length + second.length];
+
+        for (int i = 0; i < result.length; i++) {
+            if (i % 2 == 0) {
+                result[i] = first[i/2];
+            } else {
+                result[i] = second[i/2];
+            }
+        }
+
+        return result;
     }
 }

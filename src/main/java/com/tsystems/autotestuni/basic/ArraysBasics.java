@@ -10,7 +10,12 @@ public class ArraysBasics {
      * @return array in {@code int}
      */
     public static int[] createArray(int length) {
-        return new int[0];  // FIXME: Implement code here
+        int[] a = new int[length];
+
+        for (int i = 0; i < length; i++) {
+            a[i] = 2 * i - 1;
+        }
+        return a;
     }
 
     /**
@@ -20,7 +25,12 @@ public class ArraysBasics {
      * @return a new array with the same length and values
      */
     public static float[] copyArray(float[] original) {
-        return new float[0];  // FIXME: Implement code here
+        float[] newArray = new float[original.length];
+
+        for (int i = 0; i < original.length; i++) {
+            newArray[i] = original[i];
+        }
+        return newArray;
     }
 
     /**
@@ -34,6 +44,16 @@ public class ArraysBasics {
      * @return {@code true} if arrays are equal, {@code false} otherwise
      */
     public static boolean arraysEqual(char[] first, char[] second) {
-        return false;  // FIXME: Implement code here
+        if (first.length != second.length) {
+            return false;
+        }
+
+        for (int i = 0; i < first.length; i++) {
+            if (first[i] != second[i]) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
